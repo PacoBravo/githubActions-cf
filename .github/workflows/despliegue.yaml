@@ -12,4 +12,6 @@ jobs:
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
       - run: echo "Publicar versión"
-      
+      - run: pwd
+      - run: whoami
+      - run: cat /etc/os-release
