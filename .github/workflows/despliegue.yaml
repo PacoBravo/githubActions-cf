@@ -1,12 +1,16 @@
+#Nombre del workflow
 name: "Hola Mundo"
 
+#Evento que inicia el workflow
 on:
   push:
     branches: ["main"]
 
+#Job (unidad de trabajo) asociado al sistema operativo
 jobs:
   deploy-codigofacilito:
     runs-on: ubuntu-latest
+    #Pasos o acciones individuales dentro del Job
     steps:
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
