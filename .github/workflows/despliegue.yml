@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Hola Mundo
         run: echo "Hola Primer Mundo"
-        
+      - run: cat hola.php
+
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
