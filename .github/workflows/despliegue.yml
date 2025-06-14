@@ -42,7 +42,7 @@ jobs:
         run: echo "my_variable=Hola Mundo"  >> $GITHUB_OUTPUT
 
       - name: Obtener mensaje
-        run: echo "${{ steps.step_1.oujtputs.my_variable}}"
+        run: echo "${{ steps.step_1.outputs.my_variable}}"
 
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
