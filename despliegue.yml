@@ -59,13 +59,14 @@ jobs:
           name: archivo-test
           path: test.log
 
-      - run: echo "Hacemos pull del código"
-      - run: echo "Correr migraciones"
-      - run: echo "Generar binario"
-      - run: echo "Publicar versión"
-      - run: pwd
-      - run: whoami
-      - run: cat /etc/os-release
+      #- run: echo "Hacemos pull del código"
+      #- run: echo "Correr migraciones"
+      #- run: echo "Generar binario"
+      #- run: echo "Publicar versión"
+
+      #- run: pwd
+      #- run: whoami
+      #- run: cat /etc/os-release
 
 ####################################
       
@@ -92,13 +93,6 @@ jobs:
       - name: Output Primer job
         run: echo $SALIDA
         
-      - run: echo "Hacemos pull del código"
-      - run: echo "Correr migraciones"
-      - run: echo "Generar binario"
-      - run: echo "Publicar versión"
-      - run: pwd
-      - run: whoami
-      - run: cat /etc/os-release
       #Se imprime la referencia
       - run: echo ${{ github.ref}}
 
