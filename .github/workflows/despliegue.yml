@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Hola Mundo
         run: echo "Hola Primer Mundo"
-      - run: cat hola.php
+      #- run: cat hola.php
 
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
@@ -26,6 +26,9 @@ jobs:
       - run: cat /etc/os-release
       
   segundo_job:
+    #Se forza que el segundo job no se ejecute a base de una condición if
+    if: false
+
     #Se coloca una dependencia para ejecutar el segundo job (debe terminar el primer job)
     needs: primer_job
     runs-on: ubuntu-latest
