@@ -14,4 +14,4 @@ name: Deploy to server
 
       steps:
       - name: Print mensaje
-      - run: echo "${{ matrix.message }}"
+        run: echo "${{ matrix.message }}"
