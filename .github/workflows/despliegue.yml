@@ -36,6 +36,14 @@ jobs:
       - name: Github output
         run: echo $GITHUB_OUTPUT
 
+      #Se concatena un valor a mi varibale de entrono en base a un id
+      - name: Variable de entorno
+        id: step_1
+        run: echo "my_variable=Hola Mundo"  >> $GITHUB_OUTPUT
+
+      - name: Obtener mensaje
+        run: echo "${{ step.step_1.outputs.my_variable}}"
+
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
