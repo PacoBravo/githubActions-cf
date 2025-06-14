@@ -1,8 +1,6 @@
 name: Deploy to server
 
-  on:
-    push:
-      branches: ["main"]
+  on: push
 
   jobs: 
     primer_job:
