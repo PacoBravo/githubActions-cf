@@ -1,11 +1,11 @@
-name: matrix
+name: Deploy to server
 
   on: push
 
   jobs: 
     
     primer_job:
-      runs on: ubuntu-latest
+      runs-on: ubuntu-latest
 
       strategy:
         matrix:
