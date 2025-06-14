@@ -11,11 +11,16 @@ jobs:
   primer_job:
     runs-on: ubuntu-latest
 
+    #Se agregan variables de entorno
+    env:
+      NAME: Código Facilito
+
     #Pasos o acciones individuales dentro del Job
     steps:
       - name: Hola Mundo
         run: echo "Hola Primer Mundo"
       #- run: cat hola.php
+        run: echo "Hola $NAME"
 
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
