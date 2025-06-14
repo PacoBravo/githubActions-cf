@@ -22,6 +22,16 @@ jobs:
       #- run: cat hola.php
       - run: echo "Hola $NAME"
 
+      - name: Working dir
+        run: ls -al
+
+      #Se agrega extención chekout
+      - name: Action
+        uses: actions/chekout@v4
+
+      - name: Working dir after action
+        run: ls -al
+
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
