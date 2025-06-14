@@ -1,7 +1,7 @@
 #Nombre del workflow
 name: "Hola Mundo"
 
-#Evento que inicia el workflow
+#Eventos que inician el workflow
 on:
   push:
     branches: ["main"]
@@ -10,8 +10,12 @@ on:
 jobs:
   deploy-codigofacilito:
     runs-on: ubuntu-latest
+
     #Pasos o acciones individuales dentro del Job
     steps:
+      - name: Hola Mundo
+        run: echo "Hola Mundo"
+        
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
