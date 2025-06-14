@@ -8,13 +8,29 @@ on:
 
 #Job (unidad de trabajo) asociado al sistema operativo
 jobs:
-  deploy-codigofacilito:
+  primer_job:
     runs-on: ubuntu-latest
 
     #Pasos o acciones individuales dentro del Job
     steps:
       - name: Hola Mundo
-        run: echo "Hola Mundo"
+        run: echo "Hola Primer Mundo"
+        
+      - run: echo "Hacemos pull del código"
+      - run: echo "Correr migraciones"
+      - run: echo "Generar binario"
+      - run: echo "Publicar versión"
+      - run: pwd
+      - run: whoami
+      - run: cat /etc/os-release
+      
+  segundo_job:
+    runs-on: ubuntu-latest
+
+    #Pasos o acciones individuales dentro del Job
+    steps:
+      - name: Hola Mundo
+        run: echo "Hola Segundo Mundo"
         
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
