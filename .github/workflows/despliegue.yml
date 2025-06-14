@@ -27,7 +27,9 @@ jobs:
       
   segundo_job:
     #Se forza que el segundo job no se ejecute a base de una condición if
-    if: false
+    #if: false
+    #Se agrega una condición del nombre de la rama
+    if: ${{ github.ref == 'refs/heads/main'}}
 
     #Se coloca una dependencia para ejecutar el segundo job (debe terminar el primer job)
     needs: primer_job
