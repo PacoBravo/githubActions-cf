@@ -27,7 +27,7 @@ jobs:
 
       #Se agrega extención chekout
       - name: Action
-        uses: actions/chekout@v4
+        uses: actions/checkout@v4
 
       - name: Working dir after action
         run: ls -al
