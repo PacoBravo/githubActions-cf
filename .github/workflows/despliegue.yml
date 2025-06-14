@@ -25,6 +25,8 @@ jobs:
       - run: cat /etc/os-release
       
   segundo_job:
+    #Se coloca una dependencia para ejecutar el segundo job (debe terminar el primer job)
+    needs: primer_job
     runs-on: ubuntu-latest
 
     #Pasos o acciones individuales dentro del Job
