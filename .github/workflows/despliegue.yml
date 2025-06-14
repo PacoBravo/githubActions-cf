@@ -32,6 +32,10 @@ jobs:
       - name: Working dir after action
         run: ls -al
 
+      #Variable de entorno outputß
+      - name: Github output
+        run: echo $GITHUB_OUTPUT
+
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
