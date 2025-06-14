@@ -11,6 +11,10 @@ jobs:
   primer_job:
     runs-on: ubuntu-latest
 
+    #Se agrega una salida a que es capaz de ser compartida entre jobs
+    outputs:
+      salida: ${{ steps.step_1.outputs.my_variable }}
+
     #Se agregan variables de entorno
     env:
       NAME: Código Facilito
@@ -61,6 +65,10 @@ jobs:
     #Se coloca una dependencia para ejecutar el segundo job (debe terminar el primer job)
     needs: primer_job
     runs-on: ubuntu-latest
+
+    #Se agrega una variable de entorno que tomara como referencia un output referenciado del primer job
+    env:
+      SALIDA: ${{ needs.primer_job.outputs.salida}}
 
     #Pasos o acciones individuales dentro del Job
     steps:
