@@ -12,4 +12,5 @@ name: matrix
           message: ["Hola","codigoFacilito","Bootcamp Github Action"]
 
       steps:
-      - name: echo "${{ matrix.message }}"
+      - name: Print mensaje
+      - run: echo "${{ matrix.message }}"
