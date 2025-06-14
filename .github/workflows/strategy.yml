@@ -1,0 +1,15 @@
+name:
+
+  on: push
+
+  jobs: 
+    
+    primer_job:
+      runs on: ubuntu-latest
+
+      strategy:
+        matrix:
+          message: ["Hola","codigoFacilito","Bootcamp Github Action"]
+
+      steps:
+      - name: echo "${{ matrix.message }}"
