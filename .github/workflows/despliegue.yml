@@ -74,6 +74,10 @@ jobs:
     steps:
       - name: Hola Mundo
         run: echo "Hola Segundo Mundo"
+
+      #Se imprime el output generado en el primer job
+      - name: Output Primer job
+        run: echo $SALIDA
         
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
