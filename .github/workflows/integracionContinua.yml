@@ -6,7 +6,13 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
 
-    #Imprimir variables de entorno
     steps:
-      - name: Print variable
+      #Imprimir secretos de entorno
+      - name: Print secret
         run: echo "${{ secrets.TOKEN_SECRET }}"
+
+      #Instalr node 18 desde github marketplace
+      - name: setup
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '18'
