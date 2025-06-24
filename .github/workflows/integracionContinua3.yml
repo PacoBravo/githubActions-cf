@@ -46,6 +46,8 @@ jobs:
 
   #Se agrega un segundo job para el despliegue, dependiente del job de build
   job-deploy:
+    #Se agrega la directiva always para que un job siempre se ejecute
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: job-build
 
