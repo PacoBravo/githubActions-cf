@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     #Utilizar servicio redis en una maquina virtual (eso se haace a nivel job)
-    services: 
-      redis:
-        image: redis
-        ports:
-          - 6379:6379
+    #services: 
+    #  redis:
+    #    image: redis
+    #    ports:
+    #      - 6379:6379
 
     steps:
       #Imprimir secretos de entorno
@@ -25,13 +25,21 @@ jobs:
           node-version: '18'
 
       #Instalar redis cli
-      - name: Instal redis cli
-        run: sudo apt-get update -y && sudo apt-get install redis-tools -y
+      #- name: Instal redis cli
+      #  run: sudo apt-get update -y && sudo apt-get install redis-tools -y
 
       #Se manda el test de conexión de redis
-      - name: Test redis
-        run: redis-cli -h localhost -p 6379 ping
+      #- name: Test redis
+      #  run: redis-cli -h localhost -p 6379 ping
 
       #Se agrega el repositorio
       - name: Checkout
         uses: actions/checkout@v4
+
+      #Se instala dependencia npm
+      - name: Instalar dependencias
+        run: npm install
+
+      #Se ejecutan los test
+      - name: Run test
+        run: npm run test
