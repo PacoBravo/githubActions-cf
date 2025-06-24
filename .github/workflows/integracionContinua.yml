@@ -31,3 +31,7 @@ jobs:
       #Se manda el test de conexión de redis
       - name: Test redis
         run: redis-cli -h localhost -p 6379 ping
+
+      #Se agrega el repositorio
+      - name: Checkout
+        uses: actions/checkout@v4
