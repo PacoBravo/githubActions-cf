@@ -24,5 +24,10 @@ jobs:
         with: 
           node-version: '18'
 
+      #Instalar redis cli
       - name: Instal redis cli
         run: sudo apt-get update -y && sudo apt-get install redis-tools -y
+
+      #Se manda el test de conexión de redis
+      - name: Test redis
+        run: redis-cli -h localhost -p 6379 ping
