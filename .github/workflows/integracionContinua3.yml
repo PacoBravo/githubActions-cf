@@ -48,6 +48,12 @@ jobs:
       - name: Build page
         run: npm run build
 
+      #Subir artefacto de github pages
+      - name: Upload artufact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
   #Se agrega un segundo job para el despliegue, dependiente del job de build
   job-deploy:
     #Se agrega la directiva always para que un job siempre se ejecute
