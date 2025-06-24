@@ -25,5 +25,4 @@ jobs:
           node-version: '18'
 
       - name: Instal redis cli
-        run: apt-get update -y && apt-get install redis-tools -y
-        
+        run: sudo apt-get update -y && apt-get install redis-tools -y
