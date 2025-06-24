@@ -1,0 +1,12 @@
+name: Integración Continua
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+
+    #Imprimir variables de entorno
+    steps: Print variable
+      - name: Print variable
+      run: echo "${{ secrets.TOKEN_SECRET }}"
