@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     #Imprimir variables de entorno
-    steps: Print variable
+    steps:
       - name: Print variable
         run: echo "${{ secrets.TOKEN_SECRET }}"
