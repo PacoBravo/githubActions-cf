@@ -9,4 +9,4 @@ jobs:
     #Imprimir variables de entorno
     steps: Print variable
       - name: Print variable
-      run: echo "${{ secrets.TOKEN_SECRET }}"
+        run: echo "${{ secrets.TOKEN_SECRET }}"
