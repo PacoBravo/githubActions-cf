@@ -104,6 +104,7 @@ jobs:
         env: 
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 
+        #Se informa el status del job
         with:
           status: ${{ job.status }}
           fields: workflow,job,commit,repo,ref,author,took
