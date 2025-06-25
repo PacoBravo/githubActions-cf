@@ -4,7 +4,14 @@ on: push
 
 jobs:
   job-build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: ${{ matirx.os }}
+
+    Se crea una matriz para probar el funcionamiento en distintos sitemas operativos y distintas versiones de node
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [18, 20]
 
     #Utilizar servicio redis en una maquina virtual (eso se haace a nivel job)
     #services: 
@@ -22,7 +29,8 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with: 
-          node-version: '18'
+          #node-version: '18'
+          node-version: ${{ matirx.node }}
 
       #Instalar redis cli
       #- name: Instal redis cli
