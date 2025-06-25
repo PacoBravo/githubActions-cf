@@ -101,7 +101,7 @@ jobs:
         uses: 8398a7/action-slack@v3
 
         #Dlecaración de una variable de entorno dependiente de un secreto del token de Slack
-        env: 
+        env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 
         #Se informa el status del job
