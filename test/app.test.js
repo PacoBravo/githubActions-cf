@@ -5,6 +5,6 @@ describe('GET /', () => {
   it('should return HTML', async () => {
     const res = await request(app).get('/');
     expect(res.statusCode).toBe(200);
-    expect(res.text).toContain('Al final todo estará bien y si no está bien es porque no hemos llegado al final');
+    expect(res.text).toContain('Bootcamp de GitHub Action en Código Facilito');
   });
 });
