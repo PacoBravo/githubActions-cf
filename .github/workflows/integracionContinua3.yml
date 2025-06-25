@@ -7,7 +7,7 @@ jobs:
     #runs-on: ubuntu-latest
     runs-on: ${{ matirx.os }}
 
-    Se crea una matriz para probar el funcionamiento en distintos sitemas operativos y distintas versiones de node
+    #Se crea una matriz para probar el funcionamiento en distintos sitemas operativos y distintas versiones de node
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
