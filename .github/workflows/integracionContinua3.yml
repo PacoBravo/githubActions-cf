@@ -88,3 +88,22 @@ jobs:
       - name:  Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  #Tercer Job dependiende de del segundo Job (job-deploy) que notifica el despliegue via Slack sea correcto o incorrecto
+  job-notify:
+    runs-on: ubuntu latest
+    needs: job-deploy
+    if: always()
+
+    steps:
+      #Uso de un action ya existente
+      - name: notify to slack
+        uses: 8398a7/action-slack@v3
+
+        #Dlecaración de una variable de entorno dependiente de un secreto del token de Slack
+        env: 
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+
+        with:
+          status: ${{ job.status }}
+          fields: workflow,job,commit,repo,ref,author,took
