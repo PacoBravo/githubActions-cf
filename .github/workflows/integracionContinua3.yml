@@ -48,11 +48,23 @@ jobs:
       - name: Build page
         run: npm run build
 
+      - name: Debug public folder
+        run: |
+          ls -lah public/
+          echo "Contenido de public/"
+          find public/ -type f -print
+
       #Subir artefacto de github pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: public/
+
+      - name: Debug public folder2
+        run: |
+          ls -lah public/
+          echo "Contenido de public/"
+          find public/ -type f -print
 
   #Se agrega un segundo job para el despliegue, dependiente del job de build
   job-deploy:
