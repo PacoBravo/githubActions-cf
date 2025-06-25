@@ -5,7 +5,7 @@ on: push
 jobs:
   job-build:
     #runs-on: ubuntu-latest
-    runs-on: ${{ matirx.os }}
+    runs-on: ${{ matrix.os }}
 
     #Se crea una matriz para probar el funcionamiento en distintos sitemas operativos y distintas versiones de node
     strategy:
