@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with: 
           #node-version: '18'
-          node-version: ${{ matirx.node }}
+          node-version: ${{ matrix.node }}
 
       #Instalar redis cli
       #- name: Instal redis cli
