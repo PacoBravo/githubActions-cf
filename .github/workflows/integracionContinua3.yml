@@ -64,6 +64,8 @@ jobs:
 
       #Subir artefacto de github pages
       - name: Upload artifact
+        #Condicional para que soo se suba un artefacto especifico
+        if: ${{ matrix.os == 'ubuntu-latest' &&  matrix.node == 18 }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: public/
